@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Card - flip over</title>
+    <link rel="stylesheet" href="./styles/main.css">
+</head>
+<body>
+    <form class="form">
+        <div>
+            <h4>Billing Address</h4>
+            <input type="text" placeholder="Street Address">
+            <input type="text" placeholder="City">
+            <input type="text" placeholder="County">
+            <input type="text" placeholder="Postal Code">
+        </div>
+        <div>
+            <h4>Credit Card</h4>
+            <input type="text" name="card-name" placeholder="Cardholder's Name">
+            <input type="text" name="card-num" placeholder="Card Number">
+            <input type="text" name="sort-code" placeholder="Sort Code">
+            <input type="text" name="security-cvv" placeholder="CVV">
+            <input type="text" name="date" placeholder="Expiry Date">
+        </div>
+    </form>
+    <div class="card">
+        <div class="back">
+            <div class="card-magnetic-line"></div>
+            <div class="card-signature-line">
+                <div class="card-security-code">3455 <span class="card-security-digits">047</span></div>
+            </div>
+        </div>
+        <div class="front">
+            <div class="output-wrap">
+                <div class="card-number">3183-3244-0002-3345</div>
+                <div class="card-date">
+                    <h6>Expiry Date</h6>
+                    <p>04/22</p>
+                </div>
+                <div class="card-owner">Mr. John Smith</div>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./scripts/main.js"></script>
+</body>
+</html>
