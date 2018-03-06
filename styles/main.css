@@ -2,12 +2,39 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
 }
 html {
     font-size: 62.5%;
 }
 body {
-    background-color: #ddd;
+    background-color: #7e93c3;
+    color: #22392f;
+    padding: 4rem;
+}
+/*
+*
+*    Form;
+*
+*/
+.form {
+    padding: 1rem;
+}
+.card-inputs h2 {
+    width: 100%;
+    text-align: center;
+}
+.form input {
+    border: none;
+    background-color: #eee;
+    padding: .5rem;
+    margin: 1rem;
+    color: #22392f;
+}
+.card-inputs {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 /*
 *
@@ -18,7 +45,7 @@ body {
     position: relative;
     height: 18rem;
     width: 30rem;
-    margin: 2rem;
+    margin: 0 auto;
     font-size: 2rem;
 }
 .back, .front {
@@ -26,7 +53,7 @@ body {
     height: 100%;
     width: 100%;
     border-radius: .5rem;
-    transition: all .5s linear;
+    transition: all .5s ease-in-out;
 }
 .back {
     background-color: #239dcb;
@@ -54,23 +81,38 @@ body {
     height: 60%;
     width: 100%;
 }
-.card-number {
+.card-num {
     width: 80%;
     margin: 0 auto;
-    height: 2rem;
+    min-height: 2.5rem;
+    line-height: 2rem;
     background-color: #eee;
     letter-spacing: .2rem;
     text-align: center;
 }
-.card-date {
-    padding-top: 1.5rem;
+.date-wrap {
+    padding-top: 1rem;
     text-align: center;
     font-size: 1.5rem;
 }
-.card-owner {
+.card-date {
+    display: inline-block;
+    height: 2rem;
+    width: 4rem;
+    background-color: #eee;
+    line-height: 1.5rem;
+    font-size: 1.5rem;
+}
+.card-name {
     position: absolute;
-    bottom: 1.5rem;
-    left: 1.5rem;
+    bottom: 1rem;
+    left: 1rem;
+    height: 2rem;
+    line-height: 1.5rem;
+    width: 40%;
+    background-color: #eee;
+    font-size: 1.5rem;
+    text-align: center;
 }
 /*
 *
@@ -96,30 +138,34 @@ body {
     right: 0;
     font-size: 1rem;
 }
-.card-security-digits {
+.security-cvv {
     padding: .1rem;
-    background-color: rgba(255, 0, 0, .8);
+}
+/*border for card outputs*/
+.border {
+    border: .2rem solid rgba(0, 0, 0, 0);
+    border-radius: .2rem;
 }
 .security-num-background {
     animation: borderWarning 1s ease-in-out;
 }
 @keyframes borderWarning {
     0% {
-        background: none
+        border: .2rem solid rgba(0, 0, 0, 0);
     }
     20% {
-        background-color: rgba(255, 0, 0, .8);
+        border: .2rem solid rgba(255, 0, 0, .8);
     }
     40% {
-        background: none
+        border: .2rem solid rgba(0, 0, 0, 0);
     }
     60% {
-        background-color: rgba(255, 0, 0, .8);
+        border: .2rem solid rgba(255, 0, 0, .8);
     }
     80% {
-        background: none
+        border: .2rem solid rgba(0, 0, 0, 0);
     }
     100% {
-        background-color: rgba(255, 0, 0, .8);
+        border: .2rem solid rgba(255, 0, 0, .8);
     }
 }
