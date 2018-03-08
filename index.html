@@ -8,37 +8,29 @@
 </head>
 <body>
     <form class="form">
-        <div>
-            <h4>Billing Address</h4>
-            <input type="text" placeholder="Street Address">
-            <input type="text" placeholder="City">
-            <input type="text" placeholder="County">
-            <input type="text" placeholder="Postal Code">
-        </div>
-        <div>
-            <h4>Credit Card</h4>
-            <input type="text" name="card-name" placeholder="Cardholder's Name">
-            <input type="text" name="card-num" placeholder="Card Number">
-            <input type="text" name="sort-code" placeholder="Sort Code">
-            <input type="text" name="security-cvv" placeholder="CVV">
-            <input type="text" name="date" placeholder="Expiry Date">
+        <div class="card-inputs">
+            <h2>Credit Card</h2>
+            <input type="text" name="card-name" placeholder="Cardholder's Name" autocomplete='cc-name'>
+            <input type="text" name="card-num" placeholder="Card Number" autocomplete='cc-number'>
+            <input type="text" name="security-cvv" placeholder="CVV" autocomplete='cc-csc'>
+            <input type="text" name="card-date" placeholder="Expiry Date" autocomplete='cc-exp'>
         </div>
     </form>
     <div class="card">
         <div class="back">
             <div class="card-magnetic-line"></div>
             <div class="card-signature-line">
-                <div class="card-security-code">3455 <span class="card-security-digits">047</span></div>
+                <div class="card-security-code">3455 <span class="security-cvv border">047</span></div>
             </div>
         </div>
         <div class="front">
             <div class="output-wrap">
-                <div class="card-number">3183-3244-0002-3345</div>
-                <div class="card-date">
-                    <h6>Expiry Date</h6>
-                    <p>04/22</p>
+                <div class="card-num border"><!--3183-3244-0002-3345--></div>
+                <div class="date-wrap">
+                    <p>Expiry Date</p>
+                    <p class="card-date border"><!--04/22--></p>
                 </div>
-                <div class="card-owner">Mr. John Smith</div>
+                <div class="card-name border"><!--Mr. John Smith--></div>
             </div>
         </div>
     </div>
