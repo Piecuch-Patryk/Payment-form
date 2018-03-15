@@ -33,11 +33,11 @@ $(function(){
     function indicateEl(e){
         const $currentName = $(e.target).attr('name');
         // get current name attribute use it to find el by class;
-        $('.' + $currentName).addClass('security-num-background');
+        $('.' + $currentName).addClass('indicated-el-background');
         // listen for key press event;
         $(this).on('keyup', replaceContent);
         setTimeout(function(){
-            $('.' + $currentName).removeClass('security-num-background');
+            $('.' + $currentName).removeClass('indicated-el-background');
         }, 1000);
     }
     // fix card number input;
@@ -71,6 +71,15 @@ $(function(){
             $($el).val($newStr);
         }
     }
+    // *** get expiry date ***
+    function getExpiryDay(){
+        const $currentVal = $(this).val();
+        console.log();
+    }
+    function getExpiryMonth(e){
+        console.log(this.value);
+    }
+    
     // Change content in chosen section;
     function replaceContent(e){
         const $currentName = $(e.target).attr('name'),
@@ -78,29 +87,22 @@ $(function(){
         // card number;
         if ($currentName === 'card-num'){
             if ($currentName === 'card-num'){
-            if ((key > 47 && key < 57) || key == 8 || key == 127 || key == 37 || key == 39){
-                // fixed issue with keyup event; prevent default does not work;
-                fixCardNumber(e);
-            }else {
-                fixCardNumber();
+                if ((key > 47 && key < 57) || key == 8 || key == 127 || key == 37 || key == 39){
+                    // fixed issue with keyup event; prevent default does not work;
+                    fixCardNumber();
+                }else {
+                    fixCardNumber();
+                }
             }
-        }
-        }
-        // expiry date;
-        if ($currentName === 'card-date'){
-            changeHtml(e);
-        }
-        // cardholder's name;
-        if ($currentName === 'card-name'){
-            changeHtml(e);
-        }else {
-            return;
         }
     }
     
     $(window).on('click', showFrontCard);
     // click on any input, except security code input;
     $(".card-inputs input:not([name='security-cvv'])").on('click', indicateEl);
+    // click on expiry date inputs;
+    $(".expiry-day").on('click', getExpiryDay);
+    $(".expiry-month").on('click', getExpiryMonth);
     // click on CVV security code;
     $("input[name='security-cvv']").on('click', showBackCard);
 });
